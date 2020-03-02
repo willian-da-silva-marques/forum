@@ -53,6 +53,8 @@ public class ForumSecurityConfigurer extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
 		.antMatchers(HttpMethod.GET, "/topicos").permitAll()
 		.antMatchers(HttpMethod.GET, "/topicos/**").permitAll()
+		.antMatchers(HttpMethod.GET, "/cursos").permitAll()
+		.antMatchers(HttpMethod.GET, "/cursos/**").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.csrf().disable()

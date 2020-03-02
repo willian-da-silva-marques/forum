@@ -45,7 +45,7 @@ public class TopicoController {
 
 	@GetMapping
 	@Cacheable(value = "findAllTopicos")
-	public ResponseEntity<ForumResponse<Page<TopicoDTOResponse>>> findAll(@RequestParam(required = false) String nomeCurso, @PageableDefault(size = 4, sort = "id", direction = Direction.ASC) Pageable pageable) {
+	public ResponseEntity<ForumResponse<Page<TopicoDTOResponse>>> findAll(@RequestParam(required = false) String nomeCurso, @PageableDefault(size = 10, sort = "id", direction = Direction.ASC) Pageable pageable) {
 		ForumResponse<Page<TopicoDTOResponse>> response = new ForumResponse<>();
 		if (!ForumUtil.hasParameter(nomeCurso)) {
 			response.setData(this.topicoService.findAll(pageable).map(this.topicoMapper::topicoToTopicoDTOResponse));

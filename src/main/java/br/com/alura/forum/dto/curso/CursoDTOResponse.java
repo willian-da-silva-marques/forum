@@ -1,4 +1,4 @@
-package br.com.alura.forum.dto.token;
+package br.com.alura.forum.dto.curso;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,8 +11,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class TokenDTOResponse {
+public class CursoDTOResponse {
 
-	private String token;
-	private String authenticationScheme;
+	private Long id;
+	private String nome;
+	private String categoria;
 }
